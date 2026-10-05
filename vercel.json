@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/build", "destination": "/api/build.js" }
+  ],
+  "functions": {
+    "api/build.js": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
+}

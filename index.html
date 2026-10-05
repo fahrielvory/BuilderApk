@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>Rii APK Builder — Convert Any Website to Android APK</title>
+<meta name="description" content="Turn any website URL into a signed Android APK in about 60 seconds. Free, no coding, no account."/>
+<meta name="theme-color" content="#38bdf8"/>
+<meta name="apple-mobile-web-app-title" content="Rii APK Builder"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css?v=1"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "https://riiapkbuilder.vercel.app/",
+      "name": "Rii APK Builder",
+      "description": "Free website to Android APK converter."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Rii APK Builder",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Android 5.0+",
+      "url": "https://riiapkbuilder.vercel.app/",
+      "description": "Convert any website into a professional Android APK in 60 seconds."
+    }
+  ]
+}
+</script>
+
+<script defer src="/analytics.js"></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" onclick="showLanding()">Rii <em>APK</em> Builder</a>
+  <div class="nav-links">
+    <a onclick="scrollToEl(document.getElementById('features'))">Features</a>
+    <a onclick="scrollToEl(document.getElementById('pricing'))">Pricing</a>
+    <a onclick="scrollToEl(document.getElementById('how-it-works'))">How it Works</a>
+    <a onclick="scrollToEl(document.getElementById('faq'))">FAQ</a>
+    <a onclick="openDashboard()">My Apps</a>
+  </div>
+  <button class="nav-btn" onclick="focusUrlInput()">Build Your App Free →</button>
+  <button class="nav-hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mm-close" onclick="closeMobileMenu()">✕</button>
+  <button class="mm-link" onclick="closeMobileMenu();scrollToEl(document.getElementById('features'))">Features</button>
+  <button class="mm-link" onclick="closeMobileMenu();scrollToEl(document.getElementById('pricing'))">Pricing</button>
+  <button class="mm-link" onclick="closeMobileMenu();scrollToEl(document.getElementById('how-it-works'))">How it Works</button>
+  <button class="mm-link" onclick="closeMobileMenu();scrollToEl(document.getElementById('faq'))">FAQ</button>
+  <button class="mm-link" onclick="closeMobileMenu();openDashboard()">My Apps</button>
+  <button class="mm-cta" onclick="closeMobileMenu();focusUrlInput()">Build Your App Free →</button>
+</div>
+
+<main id="main-content">
+
+<section class="hero" id="hero-section">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-g1"></div>
+  <div class="hero-g2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><div class="badge-dot"></div>60-second APK conversion</div>
+      <h1 class="hero-h1">Convert Any Website <b>into a Free Android App</b></h1>
+      <p class="hero-sub">No coding. No developers. No signup. Paste your website address and your Android app is built in under 60 seconds.</p>
+      <div class="hero-pills">
+        <span class="pill">Ready in under 60 seconds</span>
+        <span class="pill">No signup to build</span>
+        <span class="pill">Installs on any Android 5+</span>
+        <span class="pill">Google Play bundle with the Pack</span>
+      </div>
+      <div class="url-form" id="hero-form">
+        <div class="url-box">
+          <input type="url" id="url-input" placeholder="https://yourwebsite.com" autocomplete="off" autofocus/>
+          <button class="btn-convert" onclick="startFlow()">Convert Now →</button>
+        </div>
+        <p class="url-note"><span>✓</span> Building and previewing are free. Downloading the file is a one-time unlock.</p>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val"><em>&lt;60s</em></div><div class="stat-lbl">BUILD TIME</div></div>
+        <div style="width:1px;height:40px;background:var(--gb)"></div>
+        <div><div class="stat-val"><em>Free</em></div><div class="stat-lbl">TO START</div></div>
+        <div style="width:1px;height:40px;background:var(--gb)"></div>
+        <div><div class="stat-val"><em>0</em></div><div class="stat-lbl">ACCOUNT NEEDED</div></div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="mock-layer ml-2"></div>
+      <div class="mock-layer ml-1"></div>
+      <div class="browser-win">
+        <div class="bw-bar">
+          <div class="bw-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></div>
+          <div class="bw-addr">🔒 riiapkbuilder.com</div>
+        </div>
+        <div class="bw-body">
+          <div class="bw-topnav">
+            <span class="bw-logo"><b>Rii APK Builder</b></span>
+            <div class="bw-nav-links"><span>Features</span><span>Free Tools</span></div>
+          </div>
+          <div class="bw-url-row">
+            <div class="bw-input">🌐 yourwebsite.com</div>
+            <div class="bw-btn">Convert Now →</div>
+          </div>
+          <div class="bw-prog-bar"><div class="bw-prog-fill"></div></div>
+          <div class="bw-prog-steps">
+            <span class="bps done">✓ Crawl</span>
+            <span class="bps done">✓ Generate</span>
+            <span class="bps done">✓ Compile</span>
+            <span class="bps active">⚡ Signing…</span>
+          </div>
+          <div class="bw-result">
+            <div class="bwr-emoji">🎉</div>
+            <div class="bwr-info">
+              <strong>myapp_v1.apk</strong>
+              <span>2.4 MB · Android 5.0+</span>
+            </div>
+            <button class="bwr-dl">↓ Download</button>
+          </div>
+          <div class="bw-feat-grid">
+            <div class="bwf"><div class="bwf-icon">⚡</div>&lt;60s Build</div>
+            <div class="bwf"><div class="bwf-icon">📱</div>WebView</div>
+            <div class="bwf"><div class="bwf-icon">🎨</div>Custom Icon</div>
+            <div class="bwf"><div class="bwf-icon">📦</div>APK+AAB</div>
+            <div class="bwf"><div class="bwf-icon">🔔</div>Push Notifs</div>
+            <div class="bwf"><div class="bwf-icon">📊</div>My Apps</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-chip hc-1">✅ APK Ready in &lt;60s</div>
+      <div class="hero-chip hc-2">📦 Google Play files available</div>
+    </div>
+  </div>
+</section>
+
+<div id="flow-section">
+  <div class="flow-step" id="step-analyzing">
+    <div class="analyzing-spinner"></div>
+    <div class="analyzing-title">Analyzing your website…</div>
+    <div class="analyzing-sub">Fetching name, icon, and metadata</div>
+    <div class="analyzing-url" id="analyzing-url-display"></div>
+  </div>
+
+  <div class="flow-step" id="step-configure">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-badge">✓ Website detected — configure your app</div>
+      <h2 class="sec-h" style="margin-top:10px">Set up your app</h2>
+    </div>
+    <div class="cfg-grid">
+      <div class="cfg-phone">
+        <div class="cfg-phone-frame">
+          <div class="cfg-phone-screen">
+            <div class="cfg-pv-icon" id="cfg-icon-preview">📱</div>
+            <div class="cfg-pv-name" id="cfg-name-preview">My App</div>
+            <div class="cfg-pv-url" id="cfg-url-preview">yourwebsite.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="cfg-form">
+        <div class="cfg-row">
+          <label>App Name</label>
+          <input type="text" id="app-name" placeholder="My Awesome App"/>
+        </div>
+        <div class="cfg-row-two">
+          <div class="cfg-row">
+            <label>Package ID</label>
+            <input type="text" id="package-id" placeholder="com.example.myapp"/>
+          </div>
+          <div class="cfg-row">
+            <label>Orientation</label>
+            <select id="orientation">
+              <option value="both">Both (default)</option>
+              <option value="portrait">Portrait only</option>
+              <option value="landscape">Landscape only</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-build-main" onclick="startBuild()">⚡ Build APK — Free</button>
+        <p style="text-align:center;font-size:11px;color:var(--muted);font-family:var(--mono)">No account required • APK ready in under 60 seconds</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-step" id="step-building">
+    <div class="build-card">
+      <div class="build-card-header">
+        <div class="build-spinner"></div>
+        <div><h3>Building your APK…</h3><p>Compiling Android project</p></div>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="bf-prog"></div></div>
+      <div class="prog-row"><span id="bf-label">Initializing…</span><span id="bf-pct">0%</span></div>
+      <div class="log-box" id="bf-log"></div>
+    </div>
+  </div>
+
+  <div class="flow-step" id="step-done">
+    <div class="done-main">
+      <div class="done-icon">🎉</div>
+      <h2>Your APK is ready!</h2>
+      <a class="btn-dl" id="download-btn" href="#" download>⬇ Download APK</a>
+      <div class="done-meta" id="done-filename"></div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <button onclick="showLanding()" class="btn-cta-g">← Convert another website</button>
+    </div>
+  </div>
+</div>
+
+<div class="live-ticker">
+  <div class="ticker-inner">
+    <div class="ticker-item">
+      <span class="ticker-dot"></span>
+      <div><div class="ticker-label">Build Time</div><div class="ticker-val">&lt;60s</div></div>
+    </div>
+    <div class="ticker-divider"></div>
+    <div class="ticker-item"><div><div class="ticker-label">Free to Start</div><div class="ticker-val">Always</div></div></div>
+    <div class="ticker-divider"></div>
+    <div class="ticker-item"><div><div class="ticker-label">Account Required</div><div class="ticker-val">None</div></div></div>
+    <div class="ticker-divider"></div>
+    <div class="ticker-item"><div><div class="ticker-label">You Get</div><div class="ticker-val">Real APK</div></div></div>
+  </div>
+</div>
+
+<section id="features" class="section">
+  <div class="eyebrow">Features</div>
+  <h2 class="sec-h">What Every Plan Gets You</h2>
+  <div class="features-grid" id="features-container"></div>
+</section>
+
+<section id="how-it-works" class="section">
+  <div class="eyebrow">🔄 How it works</div>
+  <h2 class="sec-h">Build Your App in 3 Easy Steps</h2>
+</section>
+
+<section id="pricing" class="section">
+  <div class="eyebrow">🤝 Free to Use</div>
+  <h2 class="sec-h">Free to Start</h2>
+</section>
+
+<section id="faq" class="section">
+  <div class="eyebrow">❓ FAQ</div>
+  <h2 class="sec-h">Frequently Asked Questions</h2>
+  <div class="faq-list" id="faq-container"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" onclick="showLanding()">Rii <em>APK</em> Builder</a>
+      <p>Free to start, no account.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Rii APK Builder</span>
+  </div>
+</footer>
+
+<script src="/app.js?v=1"></script>
+</body>
+</html>
